@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sat Mar 17 20:19:42 2018
-
 Copyright James Robinson 2018
 All Rights Reserved
 """
@@ -9,8 +8,10 @@ All Rights Reserved
 import math
 from microbit import *
 
-def isPrime(num):
-    
+doMod = True
+
+def isPrime(num):                                   #Prime number finding function
+                                                    #Note: faster then converting it into a loop    
     if num < 2:
         return False
 
@@ -27,8 +28,12 @@ while 1 < 2:
     
     if isPrime(i):
         x = x + 1
-        if x % 1000 == 0:
+        
+        if doMod == True:
+            if x % 1000 == 0:
+                display.scroll(str(i))
+        
+        else:
             display.scroll(str(i))
         
     i = i + 1
-    #x = x + 1
